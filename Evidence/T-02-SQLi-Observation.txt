@@ -1,0 +1,68 @@
+TEST ID: T-02
+TARGET: http://localhost:3000
+TESTER: vinit pradhan
+DATE: 02-10-2026
+
+TEST:
+Controlled SQL injection input validation probe.
+
+INPUT:
+Single quote character (')
+
+OBSERVED RESULT:
+HTTP 500 Internal Server Error
+
+IMPACT:
+A malformed input caused an unexpected server-side error.
+
+STATUS:
+Potential SQL injection / input-handling issue.
+SQL injection is NOT confirmed from this observation alone.
+
+SAFETY:
+No database modification was attempted.
+No destructive SQL statements were used.
+
+STOP CONDITION:
+Stop if data outside the authorized Juice Shop lab
+is affected or the application becomes unstable.
+
+DATABASE ERROR:
+SQLite error was returned after a single-quote input.
+
+INTERPRETATION:
+The application appears to process the supplied input
+at the database-query layer.
+
+CONFIDENCE:
+Potential SQL injection. Further controlled validation required.
+
+NO DATA WAS MODIFIED.
+
+VALIDATION TEST A:
+Normal synthetic email/password
+Result: HTTP 401
+
+VALIDATION TEST B:
+Synthetic email with trailing single quote (')
+Result: HTTP 500
+Database error: SQLITE_ERROR
+
+COMPARISON:
+Normal input produced an authentication failure.
+Malformed SQL-like input produced a SQLite database error.
+
+ASSESSMENT:
+Potential SQL injection / improper input handling.
+Further code-level verification is recommended.
+
+IMPACT:
+Unexpected database errors may expose implementation details
+and may indicate unsafe handling of user-controlled input.
+
+DATA MODIFICATION:
+None.
+
+TEST STATUS:
+Controlled validation completed.
+

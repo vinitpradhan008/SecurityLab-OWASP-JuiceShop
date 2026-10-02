@@ -1,0 +1,41 @@
+SecurityLab - T-01 Scope Validation
+
+Test ID: T-01
+Date: 02-10-2026
+Tester: vinit pradhan 
+Authorization: SecurityLab written authorization
+
+Objective:
+Verify that testing is limited to the intentionally vulnerable
+local lab environment.
+
+In-Scope Target:
+OWASP Juice Shop
+http://localhost:3000
+
+
+Out-of-Scope:
+Production systems
+Public websites
+Third-party systems
+Other devices
+Personal accounts and personal data
+
+Expected Result:
+Only the authorized local lab target is used for testing.
+
+Observed Result:
+OWASP Juice Shop was successfully accessed through the
+local host environment at http://localhost:3000.
+No production, public, or third-party system was tested.
+
+
+Safety Check:
+No production or third-party system was tested.
+
+Stop Condition:
+Stop immediately if the activity reaches an out-of-scope
+system, causes unexpected service impact, or exposes real data.
+
+Status:
+PASS

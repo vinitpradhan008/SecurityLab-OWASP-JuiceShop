@@ -1,0 +1,24 @@
+IN-SCOPE:
+Local OWASP Juice Shop at http://localhost:3000
+
+OUT-OF-SCOPE:
+Production systems
+Public websites
+Third-party systems
+Other network hosts
+Real user accounts/data
+
+TEST WINDOW:
+02-10-2026
+
+
+EVIDENCE:
+Screenshots and text observations only.
+Secrets, credentials and personal data must not be collected.
+
+STOP CONDITIONS:
+- Out-of-scope system reached
+- Real data exposed
+- Unexpected service instability
+- Data modification occurs
+- Authorization/scope becomes uncertain

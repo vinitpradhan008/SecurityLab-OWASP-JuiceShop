@@ -1,0 +1,55 @@
+TEST ID: T-05
+TARGET: http://localhost:3000
+TESTER: vinit pradhan
+DATE: 02-10-2026
+
+TEST:
+Controlled information-exposure observation using the
+Juice Shop application's search functionality.
+
+OBJECTIVE:
+Determine whether the application exposes internal or
+potentially sensitive files through normal application
+functionality.
+
+OBSERVED RESULT:
+Searching for "ftp" in the local Juice Shop search interface
+returned filenames including:
+
+- incident-support.kdbx
+- coupons_2013.md.bak
+- package.json.bak
+- package-lock.json.bak
+- encrypt.pyc
+- suspicious_errors.yml
+
+ASSESSMENT:
+Potential information exposure was observed because internal,
+backup, configuration, or security-related filenames were
+returned by the application.
+
+This observation alone does not confirm that the contents of
+these files are accessible or that sensitive information was
+disclosed.
+
+IMPACT:
+Exposure of internal filenames may reveal implementation
+details and potentially sensitive resources.
+
+DATA ACCESS:
+No file contents were downloaded or extracted.
+No real personal data was accessed.
+
+DATA MODIFICATION:
+None.
+
+SAFETY:
+Testing was limited to the local OWASP Juice Shop lab.
+
+STOP CONDITION:
+Stop before accessing or extracting sensitive file contents,
+real credentials, secrets, or data outside the authorized
+synthetic lab.
+
+TEST STATUS:
+Controlled information-exposure observation completed.

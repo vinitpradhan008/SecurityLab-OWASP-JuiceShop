@@ -1,0 +1,64 @@
+JUICE SHOP LOCAL LAB - DATA FLOW DIAGRAM
+========================================
+
+                VINIT (TESTER)
+                     |
+                     | Browser requests
+                     v
+          +----------------------+
+          |   Web Browser        |
+          |   Chrome / Edge      |
+          +----------+-----------+
+                     |
+                     | HTTP
+                     v
+          +----------------------+
+          |     JUICE SHOP      |
+          |   localhost:3000    |
+          |                      |
+          |  Web UI + REST API   |
+          +----------+-----------+
+                     |
+                     | Database queries
+                     v
+          +----------------------+
+          |   JUICE SHOP DB      |
+          |   Local Lab Only     |
+          +----------------------+
+
+TRUST BOUNDARIES
+================
+
+TB-1:
+Browser -> Juice Shop
+
+TB-2:
+Juice Shop -> Local Database
+
+TB-3:
+Local Lab -> Internet/Other Systems
+
+No testing traffic may cross TB-3.
+No production, third-party, or other computer
+may be accessed or tested.
+
+
+TB-3 MUST NOT be crossed during testing.
+
+DATA CLASSES
+============
+
+D1 - Public application content
+D2 - Synthetic test-user data
+D3 - Synthetic orders/test transactions
+D4 - Security testing evidence
+D5 - Authorization/documentation records
+
+IMPORTANT
+=========
+
+Only localhost:3000 Juice Shop is authorized
+for active security testing.
+
+No production, third-party, or other computer
+may be tested.

@@ -1,0 +1,40 @@
+TEST ID: T-03
+TARGET: http://localhost:3000
+TESTER: vinit pradhan
+DATE: 02-10-2026
+
+TEST:
+Controlled authorization validation using a synthetic
+customer account.
+
+ROLE:
+customer
+
+OBJECTIVE:
+Verify whether a customer account can access the
+restricted functionality being tested.
+
+OBSERVED RESULT:
+HTTP 401 Unauthorized.
+
+ASSESSMENT:
+Access to the tested restricted functionality was denied
+to the customer account.
+
+RESULT:
+No unauthorized access was observed.
+
+DATA MODIFICATION:
+None.
+
+SAFETY:
+Only the local OWASP Juice Shop lab was tested.
+No real user data was accessed or modified.
+
+STOP CONDITION:
+Stop if the test reaches an out-of-scope system,
+exposes real data, or causes unexpected application impact.
+
+TEST STATUS:
+Controlled authorization validation completed.
+

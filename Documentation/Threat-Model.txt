@@ -1,0 +1,50 @@
+STRIDE REGISTER
+
+S-01 | Spoofing
+Component: Authentication
+Abuse Case: An unauthorized actor attempts to authenticate as another user.
+Evidence: No direct finding.
+Risk: Medium
+Mitigation: Strong authentication, rate limiting, secure session management.
+Status: Not specifically tested.
+
+
+T-01 | Tampering
+Component: Web application input
+Abuse Case: User-controlled input is processed unexpectedly by the application.
+Evidence: T-02
+Risk: Medium
+Mitigation: Parameterized queries, input validation, secure error handling.
+Status: Potential SQL injection / input-handling issue observed.
+
+R-01 | Repudiation
+Component: Application logging
+Abuse Case: Security-relevant actions cannot be reliably attributed to a user.
+Evidence: No direct finding.
+Risk: Low
+Mitigation: Centralized audit logging with appropriate retention.
+
+I-01 | Information Disclosure
+Component: Search functionality
+Abuse Case: Internal or potentially sensitive filenames are exposed.
+Evidence: T-05
+Risk: Medium
+Mitigation: Restrict file exposure, remove unnecessary backup/internal files,
+and apply appropriate access controls.
+Status: Potential information exposure observed.
+
+D-01 | Denial of Service
+Component: Web application
+Abuse Case: Excessive requests cause service degradation.
+Evidence: Not tested.
+Risk: Medium
+Mitigation: Rate limiting and resource controls.
+Status: Not tested.
+
+E-01 | Elevation of Privilege
+Component: Authorization
+Abuse Case: Customer attempts to access restricted functionality.
+Evidence: T-03
+Risk: High
+Mitigation: Server-side authorization checks and role-based access control.
+Status: Access denied with HTTP 401 during controlled test.

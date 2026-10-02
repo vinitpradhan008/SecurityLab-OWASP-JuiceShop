@@ -1,0 +1,51 @@
+TEST ID: T-04
+TARGET: http://localhost:3000
+TESTER: vinit pradhan
+DATE: 02-10-2026
+
+TEST:
+Controlled cross-site scripting (XSS) validation in the
+local OWASP Juice Shop lab.
+
+OBJECTIVE:
+Determine whether user-controlled input is rendered as
+executable HTML/script content.
+
+INPUT:
+<iframe src="javascript:alert(`hello xss `)">
+
+
+OBSERVED RESULT:
+A browser popup displaying "hello xss" was triggered after the
+test input was processed by the local Juice Shop application.
+
+
+ASSESSMENT:
+The supplied user-controlled input was rendered as executable
+content and triggered a JavaScript alert in the local OWASP
+Juice Shop environment.
+
+This confirms client-side script execution for the tested input
+and indicates a potential cross-site scripting (XSS) vulnerability
+in the affected functionality.
+
+
+IMPACT:
+Successful script execution demonstrates that attacker-controlled
+content may execute in the application context. Potential impact
+depends on the affected functionality and application context.
+
+
+DATA MODIFICATION:
+None.
+
+SAFETY:
+Only the local OWASP Juice Shop environment was tested.
+No real user data, credentials, or session tokens were accessed.
+
+STOP CONDITION:
+Stop if the test reaches an out-of-scope system, exposes
+real data, or causes unexpected application impact.
+
+TEST STATUS:
+Controlled validation completed.

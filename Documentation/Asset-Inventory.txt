@@ -1,0 +1,32 @@
+JUICE SHOP LOCAL SECURITY LAB
+=============================
+
+IN-SCOPE:
+- Juice Shop: http://localhost:3000
+- Juice Shop test data
+- Local Juice Shop database
+
+OUT-OF-SCOPE:
+- Production systems
+- Public websites
+- Third-party systems
+- Other computers
+- Corporate/VPN infrastructure
+- Real personal or financial data
+- Any service other than the authorized Juice Shop lab
+
+OWNER:
+vinit pradhan
+
+TESTER:
+vinit pradhan
+
+ENVIRONMENT:
+Windows local machine
+
+STOP CONDITIONS:
+- Another system is affected
+- Real sensitive data is discovered
+- Testing leaves localhost
+- Windows or the lab becomes unstable
+- Target can no longer be confirmed as the authorized lab
